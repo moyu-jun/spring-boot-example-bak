@@ -18,6 +18,11 @@
     <name>spring-boot-example</name>
     <url>http://www.JemGeek.com</url>
 
+    <modules>
+        <module>spring-boot-singleton-ioc</module>
+        <module>spring-boot-dependencies</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}}</maven.compiler.source>
@@ -32,7 +37,7 @@
             <dependency>
                 <groupId>com.james.example</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${parent.project.version}</version>
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
