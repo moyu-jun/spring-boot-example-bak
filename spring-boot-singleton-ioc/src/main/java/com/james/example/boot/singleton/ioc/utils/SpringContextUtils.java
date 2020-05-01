@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * pring 工具类，用来获取 bean
+ * Spring 工具类，用来动态获取 bean
  *
  * @author James
  * @date 2020/4/28
@@ -22,7 +22,7 @@ public class SpringContextUtils implements ApplicationContextAware {
     }
 
     /**
-     * 获取applicationContext
+     * 获取 ApplicationContext
      *
      * @return
      */

@@ -9,14 +9,14 @@ public interface UserService {
     /**
      * 获取用户信息
      *
-     * @return  @link{String}
+     * @return
      */
     String getUser();
 
     /**
-     * 获取用户信息
+     * 获取用户信息，从 DAO 层获取数据
      *
-     * @return  @link{String}
+     * @return
      */
     String getUserForDao();
 }

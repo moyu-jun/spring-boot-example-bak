@@ -16,10 +16,22 @@ public class UserSingleton {
 
     private static volatile UserSingleton INSTANCE;
 
+    /**
+     * 自动注入获取的对象
+     */
     @Resource
     private UserService userService;
 
+    /**
+     * 使用 new UserService() 创建的对象
+     * 加上 ForNew 后缀来和之前两种方式创建的对象作区分
+     */
     private UserService userServiceForNew;
+
+    /**
+     * 使用 SpringContextUtils 获取的对象
+     * 加上 ForTool 后缀来和之前两种方式创建的对象作区分
+     */
     private UserService userServiceForTool;
 
     private UserSingleton() {
@@ -38,6 +50,11 @@ public class UserSingleton {
         return INSTANCE;
     }
 
+    /**
+     * 使用自动依赖注入获取 UserService 对象
+     *
+     * @return
+     */
     public String getUser() {
         if (null == userService) {
             log.debug("UserSingleton userService is null");
@@ -46,6 +63,11 @@ public class UserSingleton {
         return userService.getUser();
     }
 
+    /**
+     * 使用 new UserService() 获取 UserService 对象
+     *
+     * @return
+     */
     public String getUserForNew() {
         if (null == userServiceForNew) {
             log.debug("UserSingleton userService is null");
@@ -54,6 +76,11 @@ public class UserSingleton {
         return userServiceForNew.getUser();
     }
 
+    /**
+     * 使用 new UserService() 获取 UserService 对象，并从 UserDao 中获取数据
+     *
+     * @return
+     */
     public String getUserForNewFromDao() {
         if (null == userServiceForNew) {
             log.debug("UserSingleton userService is null");
@@ -62,6 +89,11 @@ public class UserSingleton {
         return userServiceForNew.getUserForDao();
     }
 
+    /**
+     * 使用 SpringContextUtils 获取 UserService 对象，并从 UserDao 中获取数据
+     *
+     * @return
+     */
     public String getUserForToolFromDao() {
         if (null == userServiceForTool) {
             log.debug("UserSingleton userService is null");

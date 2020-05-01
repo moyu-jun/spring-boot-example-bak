@@ -1,3 +1,3 @@
-# Spring Boot 单例模式中获取容器中的 Bean
+# Spring Boot 单例模式中注入 Bean
 
 在日常项目开发中，单例模式使用非常频繁，在实际业务中，

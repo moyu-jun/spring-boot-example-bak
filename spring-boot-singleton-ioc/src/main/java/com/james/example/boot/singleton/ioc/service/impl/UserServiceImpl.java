@@ -20,11 +20,21 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserDao userDao;
 
+    /**
+     * 获取用户信息
+     *
+     * @return
+     */
     @Override
     public String getUser() {
         return "user info";
     }
 
+    /**
+     * 获取用户信息，从 DAO 层获取数据
+     *
+     * @return
+     */
     @Override
     public String getUserForDao(){
         if(null == userDao){
