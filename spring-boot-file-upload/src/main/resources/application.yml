@@ -1,5 +1,21 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: spring-boot-file-upload
+  # MultiPart
+  servlet:
+    multipart:
+      # 开启 MultiPart, 开启此项才可以进行文件上传
+      enabled: true
+      # 将文件写入磁盘的阈值
+      file-size-threshold: 2KB
+      # 最大文件大小
+      max-file-size: 200MB
+      # 最大请求大小
+      max-request-size: 215MB
+
+# 文件存储地址
+# 所有的文件都将通过 REST API 存储到这个文件夹中
+file:
+  upload-dir: ./uploads
