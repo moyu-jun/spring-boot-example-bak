@@ -20,7 +20,14 @@
 
     <modules>
         <module>spring-boot-singleton-ioc</module>
-        <module>spring-boot-dependencies</module>
+        <module>spring-boot-dependencies</module><module>spring-boot-hello-world</module>
+        <module>spring-boot-file-upload</module>
+        <module>spring-boot-log4j2</module>
+        <module>spring-boot-logback</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-security</module>
+        <module>spring-boot-aop</module>
+        <module>spring-boot-deploy</module>
     </modules>
 
     <properties>
