@@ -30,6 +30,7 @@
         <module>spring-boot-deploy</module>
         <module>spring-boot-swagger</module>
         <module>spring-boot-restful</module>
+        <module>spring-boot-monitor</module>
     </modules>
 
     <properties>
