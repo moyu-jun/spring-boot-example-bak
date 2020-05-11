@@ -1,11 +1,13 @@
 package com.james.example.boot.rest.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author James
  * @date 2020/5/11
  */
+@Slf4j
 @RestController
 @RequestMapping("/users")
 public class UserController {

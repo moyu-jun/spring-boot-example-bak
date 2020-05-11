@@ -7,15 +7,28 @@
     <Properties>
         <Property name="fileName">/logs/spring-boot-log</Property>
         <Property name="fileGz">/logs/spring-boot-log/7z</Property>
-    </Properties>
 
+
+        <Property name="LOG_HOME">${sys:user.home}/logs</Property>
+        <!--<Property name="LOG_HOME">../logs</Property>-->
+        <!--<Property name="PATTERN">[%date{DEFAULT}] [%thread] [%-5level] TC:%x %logger{1.}.%method:%line - %msg%xEx%n</Property>-->
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_DATE_FORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
+        <!--<Property name="CONSOLE_LOG_PATTERN">%clr{%d{${LOG_DATE_FORMAT_PATTERN}}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{-&#45;&#45;}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>-->
+        <Property name="CONSOLE_LOG_PATTERN">%style{%d{${LOG_DATE_FORMAT_PATTERN}}}{Dim} %highlight{${LOG_LEVEL_PATTERN}}{FATAL=white, ERROR=red, WARN=blue, INFO=black, DEBUG=green, TRACE=blue} %style{%-5pid}{Magenta} %style{---}{Dim} %style{[%15.15t]}{Dim} %style{%-30.40c{1.}}{Cyan} %style{%-4line}{Dim} %style{:}{Dim} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_PATTERN">%d{${LOG_DATE_FORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} %-5pid --- [%t] %-40.40c{1.} L%-4line : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+
+    </Properties>
     <Appenders>
         <!-- 输出控制台日志的配置 -->
         <Console name="console" target="SYSTEM_OUT">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
-            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+<!--            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
             <!-- 输出日志的格式 -->
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}: %msg%n"/>
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}"/>
+<!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{%-5level} %-5pid -&#45;&#45; %m%n%xEx"/>-->
+<!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}: %msg%n"/>-->
         </Console>
 
         <!-- 打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->

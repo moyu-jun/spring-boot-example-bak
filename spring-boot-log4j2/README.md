@@ -1,6 +1,7 @@
 # Spring Boot系列之Log4j2的配置使用
 
 [参考文档 1 ](https://www.jianshu.com/p/46b530446d20)
+[参考文档 2 ](https://www.cnblogs.com/darknebula/p/10009212.html)
 
 后台程序开发及上线时，一般都会用到Log信息打印及Log日志记录，开发时通过 Log 信息可以快速的定位问题所在，帮助我们快捷开发。程序上线后如遇到 Bug 或错误，此时则需要日志记录来快速查找问题。
 

@@ -1,4 +1,4 @@
-package com.james.example.boot.log4j2;
+package com.james.example.boot.log4j2.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
