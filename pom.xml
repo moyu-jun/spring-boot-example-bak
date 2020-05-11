@@ -19,18 +19,33 @@
     <url>http://www.JemGeek.com</url>
 
     <modules>
-        <module>spring-boot-singleton-ioc</module>
-        <module>spring-boot-dependencies</module><module>spring-boot-hello-world</module>
-        <module>spring-boot-file-upload</module>
-        <module>spring-boot-log4j2</module>
-        <module>spring-boot-logback</module>
-        <module>spring-boot-mybatis</module>
-        <module>spring-boot-security</module>
-        <module>spring-boot-aop</module>
-        <module>spring-boot-deploy</module>
-        <module>spring-boot-swagger</module>
+        <!-- 项目统一依赖 -->
+        <module>spring-boot-dependencies</module>
+
+        <!-- Spring Boot 基础篇 -->
+        <module>spring-boot-hello</module>
         <module>spring-boot-restful</module>
+        <module>spring-boot-swagger</module>
+        <module>spring-boot-logback</module>
+        <module>spring-boot-log4j2</module>
+        <module>spring-boot-file-upload</module>
+        <module>spring-boot-aop</module>
+
+        <!-- Spring Boot 部署系列 -->
+        <module>spring-boot-deploy</module>
+
+        <!-- Spring Boot Mybatis 系列 -->
+        <module>spring-boot-mybatis</module>
+
+        <!-- Spring Boot 监控 系列 -->
         <module>spring-boot-monitor</module>
+
+        <!-- Spring Boot Security 系列 -->
+        <module>spring-boot-security</module>
+
+        <!-- Spring Boot 生产问题及解决方案 -->
+        <module>spring-boot-singleton-ioc</module>
+        <module>spring-boot-properties</module>
     </modules>
 
     <properties>
