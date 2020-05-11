@@ -28,6 +28,8 @@
         <module>spring-boot-security</module>
         <module>spring-boot-aop</module>
         <module>spring-boot-deploy</module>
+        <module>spring-boot-swagger</module>
+        <module>spring-boot-restful</module>
     </modules>
 
     <properties>
