@@ -28,18 +28,18 @@ Spring Boot 开发使用中的各种示例，以简单、实用、贴近生产�
 | [spring-boot-nginx]() | Spring Boot 应用直接运行，与使用 Nginx 代理 Spring Boot 应用 |
 | [spring-boot-docker]() | 详解使用 Docker 部署 Spring Boot 应用 |
 | [spring-boot-jenkins]() | 使用 Jenkins 持续集成 Spring Boot 应用 |
+| [spring-boot-mybatis]() | [Spring Boot Mybatis 系列]() |
+| [spring-boot-mybatis-annotation]() | Spring Boot Mybatis 注解实现 |
+| [spring-boot-mybatis-xml]() | Spring Boot Mybatis xml 实现 |
+| [spring-boot-mybatis-plugin]() | Spring Boot Mybatis 插件实现 |
+| [spring-boot-mybatis-page]() | Spring Boot Mybatis 分页详解 |
+| [spring-boot-multi-datasource]() | Spring Boot Mybatis 多数据源，读写分离实践 |
 | [spring-boot-monitor]() | [Spring Boot 监控系列]() |
 | [spring-boot-actuator]() | 使用 actuator 监控 Spring Boot 应用 |
 | [spring-boot-admin]() | 使用 Spring Boot Admin 监控 Spring Boot 应用 |
 | [spring-boot-prometheus]() | 使用 prometheus 与 grafana 监控 Spring Boot 应用 |
-| [spring-boot-mybatis]() | [Spring Boot Mybatis 系列]() |
-| [spring-boot-mybatis-annotation]() | Spring Boot Mybatis 注解实现 |
-| [spring-boot-mybatis-xml]() | Spring Boot Mybatis xml 实现 |
-| [spring-boot-mybatis-plugin]() | |
-| [spring-boot-mybatis-page]() | |
-| [spring-boot-multi-datasource]() | |
-| spring-boot-aop | |
-| spring-boot-single-ioc | |
+| spring-boot-aop | Spring Boot 切面实现 |
+| [spring-boot-single-ioc](http://jemgeek.com/archives/2020/spring-boot-singleton-ioc.html) | Spring Boot 单例模式中，自动注入问题详解 |
 |  | |
 |  | |
 |  | |

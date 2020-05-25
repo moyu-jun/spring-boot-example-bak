@@ -1,4 +1,4 @@
-package com.james.example.boot.hello.world;
+package com.james.example.boot.hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/5/9
  */
 @SpringBootApplication
-public class HelloWorldApplication {
+public class HelloApplication {
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class, args);
+        SpringApplication.run(HelloApplication.class, args);
     }
 }

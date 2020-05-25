@@ -1,5 +1,6 @@
 package com.james.example.boot.rest.controller;
 
+import com.james.example.boot.rest.domain.request.UserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping("")
-    public String getUsers() {
-        return "列出所有用户，List<User>";
+    public String getUsers(@RequestBody UserRequest userRequest) {
+        return "分页列出所有用户，List<User>";
     }
 
     @GetMapping("/{userId}")

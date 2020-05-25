@@ -23,7 +23,6 @@
         <module>spring-boot-dependencies</module>
 
         <!-- Spring Boot 基础篇 -->
-        <module>spring-boot-hello</module>
         <module>spring-boot-restful</module>
         <module>spring-boot-swagger</module>
         <module>spring-boot-logback</module>
@@ -46,6 +45,7 @@
         <!-- Spring Boot 生产问题及解决方案 -->
         <module>spring-boot-singleton-ioc</module>
         <module>spring-boot-properties</module>
+        <module>spring-boot-hello</module>
     </modules>
 
     <properties>
