@@ -46,6 +46,7 @@
         <module>spring-boot-singleton-ioc</module>
         <module>spring-boot-properties</module>
         <module>spring-boot-hello</module>
+        <module>spring-boot-websocket</module>
     </modules>
 
     <properties>
