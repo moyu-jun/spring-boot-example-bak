@@ -293,3 +293,5 @@ public class SpringBootHelloApplication {
 2. 打包完成之后，会在项目中创建一个 `target` 文件夹，文件夹下会有一个以 `项目名-版本.jar` 的 `jar` 包存在。这个`jar` 包就是最终可执行的文件。
 
 ![10.png](https://i.loli.net/2020/06/05/BvUNhPFcCrkWI8A.png)
+
+当然，除了使用命令 `java -jar xxx.jar` 这种简单的部署方式外，还有很多部署方式。比如使用 Docker 部署，比如使用 Nginx 代理等等。这些内容将会在后续的文章中做详细的介绍。
