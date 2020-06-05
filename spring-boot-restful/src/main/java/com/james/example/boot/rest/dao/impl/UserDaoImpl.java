@@ -1,7 +1,7 @@
-package com.james.example.boot.hello.dao.impl;
+package com.james.example.boot.rest.dao.impl;
 
-import com.james.example.boot.hello.dao.UserDao;
-import com.james.example.boot.hello.domain.User;
+import com.james.example.boot.rest.dao.UserDao;
+import com.james.example.boot.rest.domain.User;
 import org.springframework.stereotype.Component;
 
 /**

@@ -1,4 +1,4 @@
-package com.james.example.boot.hello.domain;
+package com.james.example.boot.rest.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

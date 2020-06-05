@@ -1,8 +1,14 @@
 package com.james.example.boot.rest.controller;
 
+
+import com.james.example.boot.rest.domain.ResponseResult;
+import com.james.example.boot.rest.domain.User;
 import com.james.example.boot.rest.domain.request.UserRequest;
+import com.james.example.boot.rest.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author James
@@ -10,31 +16,44 @@ import org.springframework.web.bind.annotation.*;
  */
 @Slf4j
 @RestController
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UserController {
 
+    @Resource
+    private UserService userService;
+
+    /**
+     * 分页获取用户列表
+     *
+     * @param userRequest 请求参数
+     * @return
+     */
     @GetMapping("")
-    public String getUsers(@RequestBody UserRequest userRequest) {
-        return "分页列出所有用户，List<User>";
+    public String getUsers(@RequestBody UserRequest userRequest){
+        if(userRequest == null || userRequest.getPageNo() == null){
+            return "获取用户列表";
+        }
+        return "分页获取用户列表，pageNo = " + userRequest.getPageNo() + "; pageSize = " + userRequest.getPageSize();
+    }
+
+    /**
+     * 创建一个用户信息
+     *
+     * @param user 用户数据
+     * @return
+     */
+    @PostMapping("")
+    public String postUsers(@RequestBody User user){
+
+        if(user == null){
+            return "";
+        }
+        return "保存用户信息成功";
     }
 
     @GetMapping("/{userId}")
-    public String getUser(@PathVariable Long userId) {
-        return "获取 UserId 为 " + userId + " 的用户";
+    public ResponseResult getUser(@PathVariable Long userId){
+        return ResponseResult.ok(userService.getUser(userId));
     }
 
-    @PostMapping("")
-    public String postUser(@RequestParam("user") String user) {
-        return "新建  " + user + " 的用户";
-    }
-
-    @PutMapping("/{userId}")
-    public String putUser(@PathVariable Long userId) {
-        return "更新 UserId 为 " + userId + " 的用户";
-    }
-
-    @DeleteMapping("/{userId}")
-    public String deleteUser(@PathVariable Long userId) {
-        return "更新 UserId 为 " + userId + " 的用户";
-    }
 }

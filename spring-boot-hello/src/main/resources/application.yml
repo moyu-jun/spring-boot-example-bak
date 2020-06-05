@@ -1,7 +1,8 @@
 server:
   port: 8081
+
 spring:
   application:
     name: spring-boot-hello
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev

@@ -1,6 +1,7 @@
-package com.james.example.boot.hello.service;
+package com.james.example.boot.rest.service;
 
-import com.james.example.boot.hello.domain.response.UserResponse;
+
+import com.james.example.boot.rest.domain.response.UserResponse;
 
 /**
  * 用户操作的逻辑层，接口定义

@@ -1,4 +1,4 @@
-package com.james.example.boot.hello.domain;
+package com.james.example.boot.rest.domain;
 
 /**
  * 通过接口返回的状态码

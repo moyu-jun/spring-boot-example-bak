@@ -1,6 +1,6 @@
-package com.james.example.boot.hello.dao;
+package com.james.example.boot.rest.dao;
 
-import com.james.example.boot.hello.domain.User;
+import com.james.example.boot.rest.domain.User;
 
 /**
  * 用户相关的数据访问层，负责从数据源中新增、查询、修改、删除等

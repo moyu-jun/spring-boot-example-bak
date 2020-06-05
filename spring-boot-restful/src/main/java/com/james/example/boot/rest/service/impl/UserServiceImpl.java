@@ -1,9 +1,9 @@
-package com.james.example.boot.hello.service.impl;
+package com.james.example.boot.rest.service.impl;
 
-import com.james.example.boot.hello.dao.UserDao;
-import com.james.example.boot.hello.domain.User;
-import com.james.example.boot.hello.domain.response.UserResponse;
-import com.james.example.boot.hello.service.UserService;
+import com.james.example.boot.rest.dao.UserDao;
+import com.james.example.boot.rest.domain.User;
+import com.james.example.boot.rest.domain.response.UserResponse;
+import com.james.example.boot.rest.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
