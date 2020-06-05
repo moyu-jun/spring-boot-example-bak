@@ -51,20 +51,20 @@ spring-boot-example
 
 1. 选择 `Spring Initializr` ，创建一个 Spring Boot 项目；
 2. `Project SDK` 为 JDK 的版本选择，如没有，可点击右侧的 `New` 按钮添加本地的 JDK 环境；
-3. 选择默认的 Spring Boot 初始化地址即可。
-4. 点击 `Next` 下一步
+3. 选择默认的 Spring Boot 初始化地址即可；
+4. 点击 `Next` 下一步。
 
 ![2.png](https://i.loli.net/2020/05/26/cfDShobBMq3LxGT.png)
 
 1. 输入你的 `Group` （一般为域名反转+业务线）及 `Artifact` （一般为项目名称+模块）；
-2. 项目版本，按照自己的习惯来；
+2. 项目版本，按照自己的习惯来，或者参考《阿里巴巴 Java 开发手册》；
 3. 包名，即源代码中的代码包根目录。一般为域名反转+业务线+模块。
 
 ![3.png](https://i.loli.net/2020/05/26/5G8IqKevP1oJg7N.png)
 
 1. 选择你初始需要依赖的组件类型；
-2. 选择相应的依赖组件
-3. 已选择的依赖组件信息
+2. 选择相应的依赖组件；
+3. 已选择的依赖组件信息。
 
 ![4.png](https://i.loli.net/2020/05/26/ehYCx4vNQpSA2aL.png)
 
@@ -116,7 +116,7 @@ Spring Boot 项目创建完毕之后，会自动生成一个初始的 `pom.xml` 
         <java.version>1.8</java.version>
     </properties>
 
-    <!-- 第三方库的依赖 -->
+    <!-- 第三方库的依赖，日常使用最多的地方在此 -->
     <dependencies>
         <!-- Spring Boot 项目基础依赖 -->
         <dependency>
@@ -205,11 +205,13 @@ spring:
 
 由于篇幅问题，在此不会介绍项目分层的问题，仅做一个简单的接口提供访问，具体的项目分层及更详细的知识将在下一篇文章中详细介绍。
 
-创建一个测试接口在 Spring Boot 中非常简单的工作。在我看来 Spring Boot 最大的特点就是 **约定大于配置** ，大大简化了我们的开发，让开发者更专注于业务而不是各种繁琐的配置。
+创建一个测试接口在 Spring Boot 中是非常简单的工作。在我看来 Spring Boot 最大的特点就是 **约定大于配置** ，大大简化了我们的开发，让开发者更专注于业务而不是各种繁琐的配置。
 
 首先创建一个 `controller` 的包用来存放 Controller 相关的类。然后创建一个 `HelloController` 做为测试接口类入口。代码如下：
 
 ```java
+package com.xingtuai.hello.controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
