@@ -4,8 +4,6 @@ Spring Boot 如今已经成为 Java 后端开发的主流技术框架，它以�
 
 [Spring Boot Example](https://github.com/JemGeek/spring-boot-example) 开源项目分享了很多 Spring Boot 相关的技术实践，本系列中的项目会尽量贴近生产，贴近企业开发。而不仅仅是提供一些简单的 Demo。同时在项目中可能会踩到的坑也会一一说明。
 
-本篇作为 [Spring Boot Example](https://github.com/JemGeek/spring-boot-example) 系列的第一篇，主要介绍本系列的架构，以及 Spring Boot 的一些基本知识。
-
 ## Spring Boot Example 项目概述
 
 工具、组件版本：
@@ -14,12 +12,8 @@ Spring Boot 如今已经成为 Java 后端开发的主流技术框架，它以�
 | :-------------------- | :------------- |
 | IDEA                 | 2019.3        |
 | JDK                  | 1.8           |
-| Maven                | 3.x           |
-| Spring Boot          | 2.2.5.RELEASE |
-| Spring Cloud         | Hoxton.SR3    |
-| Spring Cloud Alibaba | 2.2.1.RELEASE |
-
-> 以上 Spring 三套件的依赖版本参考于 [Spring Cloud Alibaba 版本说明](https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
+| Maven                | 3.6           |
+| Spring Boot          | 2.3.0.RELEASE |
 
 Spring Boot Example 项目结构：
 
@@ -39,9 +33,7 @@ spring-boot-example
 
 ## Spring Boot 开发
 
-本篇主要详解使用 Spring Boot 开发的一些基础知识与应用。
-
->  注：本篇介绍的项目开发为独立项目，旨在介绍独立项目的创建与基础开发，故 Spring Boot 版本为 `2.3.0.RELEASE` 最新版本。后续的文章将使用聚合型项目结构，版本按照 `Spring Boot Example` 的项目版本说明。
+本篇主要详解使用 Spring Boot 开发的一些基础知识与应用。也是 [Spring Boot Example](https://github.com/JemGeek/spring-boot-example) 开源项目的第一篇文章。
 
 ### Spring Boot 项目创建
 
@@ -295,3 +287,24 @@ public class SpringBootHelloApplication {
 ![10.png](https://i.loli.net/2020/06/05/BvUNhPFcCrkWI8A.png)
 
 当然，除了使用命令 `java -jar xxx.jar` 这种简单的部署方式外，还有很多部署方式。比如使用 Docker 部署，比如使用 Nginx 代理等等。这些内容将会在后续的文章中做详细的介绍。
+
+### 其他
+
+当你使用 https://start.spring.io 生成 Spring Boot 初始项目时，会生成下面这些奇怪的文件。
+
+```
+├── .mvn
+│   └── wrapper
+│       ├── maven-wrapper.jar
+│       ├── maven-wrapper.properties
+│       └── MavenWrapperDownloader.java
+├── HELP.md
+├── mvnw
+└── mvnw.cmd
+```
+
+其中 HELP.md 是几乎无用的，建议删除，内容感兴趣自己可以看一下。
+
+其他的文件都是与 maven 相关的，这个其实叫做 `maven-wrapper` ，可以理解为 maven 的包装。它的主要作用是当你本地没有安装此版本的 maven 时，它会自动帮你下载配置好的 maven 版本。然后使用 `mvnw` 或 `mvnw.cmd` 去执行 maven 命令，如 `mvn clean` 等。
+
+一般情况下 IDEA 都会自带 maven，而且 maven 的版本相对稳定，没必要专门为项目设置，所以一般情况下我们会选择删除这些文件。这里个人意见也是建议删除，且源代码中也是已经删除了的。

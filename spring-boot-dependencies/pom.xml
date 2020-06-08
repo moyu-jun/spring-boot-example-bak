@@ -16,13 +16,6 @@
         <!-- Spring Boot -->
         <spring-boot-admin.version>2.2.0</spring-boot-admin.version>
 
-        <!-- Spring Cloud -->
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <spring-cloud-openfeign.version>2.2.0.RELEASE</spring-cloud-openfeign.version>
-
-        <!-- Spring Cloud Alibaba -->
-        <spring-cloud-alibaba.verion>2.2.0.RELEASE</spring-cloud-alibaba.verion>
-
         <!-- DataSource -->
         <spring-boot-tk-mapper.version>2.1.5</spring-boot-tk-mapper.version>
         <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
@@ -37,29 +30,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Cloud -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- openfeign -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-openfeign</artifactId>
-                <version>${spring-cloud-openfeign.version}</version>
-            </dependency>
-
-            <!-- Spring Cloud Alibaba -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.verion}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <!-- Spring Boot -->
             <dependency>
