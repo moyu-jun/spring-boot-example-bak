@@ -11,6 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
+ * GET     /api/v1/books        所有书单
+ * GET     /api/v1/books/{id}   获取一条书单
+ * POST    /api/v1/books        新建一条书单
+ * PUT     /api/v1/books/{id}   更新一条书单，提供全部信息
+ * PATCH   /api/v1/books/{id}   更新一条书单，提供部分信息
+ * DELETE  /api/v1/books/{id}   删除一条书单
+ * DELETE  /API/v1/books        删除所有书单
+ *
  * @author James
  * @date 2020/5/11
  */
@@ -23,6 +31,16 @@ public class UserController {
     private UserService userService;
 
     /**
+     * 获取用户列表 - 待定
+     *
+     * @return
+     */
+//    @GetMapping("")
+//    public String getUsers(){
+//        return "获取所有用户，不分页";
+//    }
+
+    /**
      * 分页获取用户列表
      *
      * @param userRequest 请求参数
@@ -33,7 +51,12 @@ public class UserController {
         if(userRequest == null || userRequest.getPageNo() == null){
             return "获取用户列表";
         }
-        return "分页获取用户列表，pageNo = " + userRequest.getPageNo() + "; pageSize = " + userRequest.getPageSize();
+        return "获取用户列表，pageNo = " + userRequest.getPageNo() + "; pageSize = " + userRequest.getPageSize();
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseResult getUser(@PathVariable Long userId){
+        return ResponseResult.ok(userService.getUser(userId));
     }
 
     /**
@@ -43,7 +66,7 @@ public class UserController {
      * @return
      */
     @PostMapping("")
-    public String postUsers(@RequestBody User user){
+    public String addUser(@RequestBody User user){
 
         if(user == null){
             return "";
@@ -51,9 +74,9 @@ public class UserController {
         return "保存用户信息成功";
     }
 
-    @GetMapping("/{userId}")
-    public ResponseResult getUser(@PathVariable Long userId){
-        return ResponseResult.ok(userService.getUser(userId));
-    }
+    @DeleteMapping("/{userId}")
+    public String deleteUser(@PathVariable Long userId){
 
+        return "删除用户信息：userId = " + userId;
+    }
 }
