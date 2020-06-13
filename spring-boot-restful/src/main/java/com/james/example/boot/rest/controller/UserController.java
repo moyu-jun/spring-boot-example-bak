@@ -43,19 +43,26 @@ public class UserController {
     /**
      * 分页获取用户列表
      *
-     * @param userRequest 请求参数
+     * @param page  页数
+     * @param limit 每页数量
      * @return
      */
-    @GetMapping("")
-    public String getUsers(@RequestBody UserRequest userRequest){
-        if(userRequest == null || userRequest.getPageNo() == null){
-            return "获取用户列表";
+    @GetMapping("/{page}/{limit}")
+    public ResponseResult getUsers(@PathVariable Integer page, @PathVariable Integer limit) {
+        if (page == null || limit == null) {
+            return ResponseResult.error();
         }
-        return "获取用户列表，pageNo = " + userRequest.getPageNo() + "; pageSize = " + userRequest.getPageSize();
+
+        log.info("page = {}; limit = {}", page, limit);
+
+        return ResponseResult.ok("获取用户列表，page = " + page + "; limit = " + limit);
     }
 
     @GetMapping("/{userId}")
-    public ResponseResult getUser(@PathVariable Long userId){
+    public ResponseResult getUser(@PathVariable Long userId) {
+
+        log.info("userId = {}", userId);
+
         return ResponseResult.ok(userService.getUser(userId));
     }
 
@@ -66,17 +73,41 @@ public class UserController {
      * @return
      */
     @PostMapping("")
-    public String addUser(@RequestBody User user){
+    public String addUser(@RequestBody User user) {
 
-        if(user == null){
-            return "";
+        if (user == null) {
+            return "传入数据为空";
         }
+        log.info("user = {}", user.toString());
+
         return "保存用户信息成功";
     }
 
     @DeleteMapping("/{userId}")
-    public String deleteUser(@PathVariable Long userId){
+    public String deleteUser(@PathVariable Long userId) {
 
         return "删除用户信息：userId = " + userId;
+    }
+
+    @DeleteMapping("")
+    public String deleteUsers(@RequestBody User user) {
+
+        return "删除所有用户信息：user = " + user.toString();
+    }
+
+    @PutMapping("/{userId}")
+    public String putUser(@PathVariable Long userId, @RequestBody User user) {
+
+        log.info("userId = {}; user = {}", userId, user.toString());
+
+        return "更新用户信息：user = " + user.toString();
+    }
+
+    @PatchMapping("/{userId}")
+    public String patchUser(@PathVariable Long userId, @RequestBody User user) {
+
+        log.info("userId = {}; user = {}", userId, user.toString());
+
+        return "更新部分用户信息：user = " + user.toString();
     }
 }
